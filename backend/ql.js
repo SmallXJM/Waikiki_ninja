@@ -66,10 +66,10 @@ module.exports.updateEnv = async (cookie, eid, remarks) => {
     url: 'api/envs',
     params: { t: Date.now() },
     json: {
-      name: 'JD_COOKIE',
-      value: cookie,
-      id: eid,
-      remarks: remarks,
+      "name": 'JD_COOKIE',
+      "value": cookie,
+      "remarks": remarks,
+      "id": eid
     },
     headers: {
       Accept: 'application/json',
