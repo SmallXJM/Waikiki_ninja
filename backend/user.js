@@ -196,6 +196,7 @@ module.exports = class User {
     const envs = await getEnvs();
     const poolInfo = await User.getPoolInfo();
     //const env = await envs.find((item) => item.value.match(/pt_pin=(.*?);/)[1] === this.pt_pin);
+    const env = false;
     if (!env) {
       // 新用户
       if (!poolInfo.allowAdd) {
