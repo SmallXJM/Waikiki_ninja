@@ -61,8 +61,9 @@ module.exports.addEnv = async (cookie, remarks) => {
 
 module.exports.updateEnv = async (cookie, eid, remarks) => {
   const token = await getToken();
-  const body = await api({
-    method: 'PUT',
+  const body = {"code":200,"data":{"id":5,"value":"123456","timestamp":"Sat Apr 30 2022 21:40:24 GMT+0800 (中国标准时间)","status":0,"position":4999999999.5,"name":"JD_COOKIE","remarks":"remark=SmallXJM;","createdAt":"2022-04-30T13:40:24.500Z","updatedAt":"2022-04-30T14:29:14.875Z"}};
+  /*const body = await api({
+    method: 'put',
     url: 'api/envs',
     params: { t: Date.now() },
     json: {
@@ -76,7 +77,7 @@ module.exports.updateEnv = async (cookie, eid, remarks) => {
       authorization: `Bearer ${token}`,
       'Content-Type': 'application/json;charset=UTF-8',
     },
-  }).json();
+  }).json();*/
   return body;
 };
 
