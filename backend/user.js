@@ -223,7 +223,7 @@ module.exports = class User {
       //this.timestamp = body.data.timestamp;
       this.timestamp = 0;
       message = `欢迎回来，${this.nickName}`;
-      this.#sendNotify('Ninja 运行通知', `用户 ${this.nickName}(${decodeURIComponent(this.pt_pin)}) 已更新 CK`);
+      //this.#sendNotify('Ninja 运行通知', `用户 ${this.nickName}(${decodeURIComponent(this.pt_pin)}) 已更新 CK`);
     }
     return {
       nickName: this.nickName,
