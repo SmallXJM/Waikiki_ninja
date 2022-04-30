@@ -234,7 +234,7 @@ module.exports = class User {
 
   async getUserInfoByEid() {
     const envs = await getEnvs();
-    const env = await envs.find((item) => item.id === this.eid);
+    const env = await envs.find((item) => parseInt(item.id) === parseInt(this.eid));
     if (!env) {
       throw new UserError('没有找到这个账户，重新登录试试看哦', 230, 200);
     }
