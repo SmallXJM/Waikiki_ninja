@@ -216,7 +216,6 @@ module.exports = class User {
     } else {
       this.eid = env.id;
       const remarks = `remark=${this.nickName};`;
-      this.#sendNotify('Ninja 运行通知', `用户 ${this.nickName}(${decodeURIComponent(this.pt_pin)}) `+eid);
 
       const body = await updateEnv(this.cookie, this.eid, remarks);
       /*if (body.code !== 200) {
