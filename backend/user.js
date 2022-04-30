@@ -234,7 +234,7 @@ module.exports = class User {
 
   async getUserInfoByEid() {
     const envs = await getEnvs();
-    const env = await envs.find((item) => parseInt(item.id) === parseInt(this.eid));
+    const env = await envs.find((item) => item.id == this.eid);
     if (!env) {
       throw new UserError('没有找到这个账户，重新登录试试看哦', 230, 200);
     }
@@ -259,7 +259,7 @@ module.exports = class User {
     }
 
     const envs = await getEnvs();
-    const env = await envs.find((item) => item.id === this.eid);
+    const env = await envs.find((item) => item.id == this.eid);
     if (!env) {
       throw new UserError('没有找到这个ck账户，重新登录试试看哦', 230, 200);
     }
@@ -338,7 +338,7 @@ module.exports = class User {
   //不查nickname了，用remark代替
   async getWSCKUserInfoByEid() {
     const envs = await getWSCKEnvs();
-    const env = await envs.find((item) => item.id === this.wseid);
+    const env = await envs.find((item) => item.id == this.wseid);
     if (!env) {
       throw new UserError('没有找到这个账户，重新登录试试看哦', 230, 200);
     }
@@ -363,7 +363,7 @@ module.exports = class User {
     }
 
     const envs = await getWSCKEnvs();
-    const env = await envs.find((item) => item.id === this.wseid);
+    const env = await envs.find((item) => item.id == this.wseid);
     if (!env) {
       throw new UserError('没有找到这个wskey账户，重新登录试试看哦', 230, 200);
     }
