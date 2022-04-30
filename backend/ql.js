@@ -62,7 +62,7 @@ module.exports.addEnv = async (cookie, remarks) => {
 module.exports.updateEnv = async (cookie, eid, remarks) => {
   const token = await getToken();
   const body = await api({
-    method: 'PUT',
+    method: 'put',
     url: 'api/envs',
     params: { t: Date.now() },
     json: {
@@ -76,7 +76,7 @@ module.exports.updateEnv = async (cookie, eid, remarks) => {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json;charset=UTF-8',
     },
-  });
+  }).json();
   return body;
 };
 
