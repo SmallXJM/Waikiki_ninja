@@ -68,8 +68,8 @@ module.exports.updateEnv = async (cookie, eid, remarks) => {
     json: {
       name: 'JD_COOKIE',
       value: cookie,
-      _id: eid,
-      remarks,
+      id: eid,
+      remarks: remarks,
     },
     headers: {
       Accept: 'application/json',
