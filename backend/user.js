@@ -10,6 +10,9 @@ const { addEnv, delEnv, getEnvs, getEnvsCount, updateEnv , addWSCKEnv, delWSCKEn
 const path = require('path');
 const qlDir = process.env.QL_DIR || '/ql';
 const notifyFile = path.join(qlDir, 'shell/notify.sh');
+const notify = require('/ql/data/scripts/sendNotify.js');
+const title = process.argv[2];
+const content = process.argv[3];
 const { exec } = require('child_process');
 const { GET_RANDOM_TIME_UA } = require('./utils/USER_AGENT');
 
@@ -492,13 +495,15 @@ module.exports = class User {
       console.log('Ninja 通知已关闭\n' + title + '\n' + content + '\n' + '已跳过发送');
       return;
     }
+    notify.sendNotify(`${title}`, `${content}`);
+/*
     exec(`${notifyFile} "${title}" "${content}"`, (error, stdout, stderr) => {
       if (error) {
         console.log(stderr);
       } else {
         console.log(stdout);
       }
-    });
+    });*/
   }
 //////////////////////////////////////////////
   async #getWSCKCheck() {
