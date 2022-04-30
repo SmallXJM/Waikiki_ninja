@@ -215,12 +215,12 @@ module.exports = class User {
       }
     } else {
       this.eid = env._id;
-      /*const body = await updateEnv(this.cookie, this.eid);
+      const remarks = `remark=${this.nickName};`;
+      const body = await updateEnv(this.cookie, this.eid, remarks);
       if (body.code !== 200) {
         throw new UserError(body.message || '更新账户错误，请重试', 221, body.code || 200);
       }
-      this.timestamp = body.data.timestamp;*/
-      this.timestamp=0;
+      this.timestamp = body.data.timestamp;
       message = `欢迎回来，${this.nickName}`;
       this.#sendNotify('Ninja 运行通知', `用户 ${this.nickName}(${decodeURIComponent(this.pt_pin)}) 已更新 CK`);
     }
