@@ -215,8 +215,8 @@ module.exports = class User {
       }
     } else {
       this.eid = env._id;
-      const remarks = `remark=${this.nickName};`;
-      const body = await updateEnv(this.cookie, this.eid, remarks);
+      //const remarks = `remark=${this.nickName};`;
+      const body = await updateEnv(this.cookie, this.eid, "");
       if (body.code !== 200) {
         throw new UserError(body.message || '更新账户错误，请重试', 221, body.code || 200);
       }
