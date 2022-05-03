@@ -460,9 +460,9 @@ module.exports = class User {
     }
     
     if (!body.data?.userInfo && !body_bak?.data.userInfo && this.jdwsck && !nocheck) {
-      throw new UserError('获取用户信息失败，请检查您的 wskey ！', 201, 200);
+      throw new UserError('获取用户信息失败，请检查您的wskey！', 201, 200);
     } else if (!body.data?.userInfo && !body_bak?.data.userInfo && !nocheck) {
-      throw new UserError('获取用户信息失败，请检查您的 cookie ！', 201, 200);
+      throw new UserError('获取用户信息失败，请检查您的Cookie！', 201, 200);
     }
     this.nickName = (body.data?.userInfo.baseInfo.nickname || body_bak?.data.userInfo.baseInfo.nickname) || decodeURIComponent(this.pt_pin);
 
@@ -515,7 +515,7 @@ module.exports = class User {
     const uuid = s['uuid']
     const sign = s['sign']
     if (!sv||!st||!uuid||!sign) {
-      throw new UserError('获取签名失败，请等待Ninja修理 ！', 200, 200);
+      throw new UserError('获取签名失败，请等待Ninja修理！', 200, 200);
     }
     const body = await api({
       method: 'POST',
